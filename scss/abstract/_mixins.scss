@@ -1,0 +1,24 @@
+@use './variables' as v;
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexCenter {
+  @extend %flex;
+  justify-content: center;
+}
+
+@mixin flexSpaceBetween {
+  @extend %flex;
+  justify-content: space-between
+}
+
+@function setTextColor($color) {
+  @if(lightness($color) < 70) {
+    @return #fefefe;
+  } @else {
+    @return v.$grayishViolet;
+  }
+}

@@ -1,0 +1,31 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: v.$font-family;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: v.$font-family;
+  font-size: v.$font-size;
+  color: mx.setTextColor(#fff);
+}
+
+h1, h2, h3, h4, h5, h5 {
+  color: v.$veryDarkBlue;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: mx.setTextColor(v.$darkViolet);
+  font-weight: 700;
+}

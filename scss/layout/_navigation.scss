@@ -1,0 +1,42 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.nav-bar {
+  @include mx.flexSpaceBetween;
+  padding-block: v.$lgPad;
+  position: relative;
+
+  &-menu {
+    display: none;
+    position: absolute;
+    inset: 8rem auto 0;
+    width: 100%;
+    // TODO: Adjust height to cover header illustration
+    height: 42rem;
+    padding-inline: v.$lgPad;
+    background: v.$darkViolet;
+    border-radius: v.$smallRadius;
+    
+    .nav-items, .login-items {
+      @include mx.flexCenter;
+      flex-direction: column;
+      padding-block: v.$mdPad;
+
+      a:not(.btn-pill) {
+        padding-block: v.$mdPad;
+      }
+    }
+
+    .nav-items {
+      border-bottom: 1px v.$borderGray solid;
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+
+  i {
+    font-size: 3rem;
+  }
+}

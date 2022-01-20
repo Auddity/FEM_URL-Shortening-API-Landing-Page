@@ -1,0 +1,29 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  background: v.$cyan;
+  color: mx.setTextColor(v.$cyan);
+  width: 100%;
+
+  &-menu {
+    background: transparent;
+    color: v.$grayishViolet;
+  }
+
+  &-pill {
+    border-radius: v.$pillRadius;
+    padding-block: v.$smPad;
+  }
+
+  &-square {
+    border-radius: v.$smallRadius
+  }
+
+  &:active {
+    background: v.$darkViolet;
+    color: mx.setTextColor(v.$darkViolet);
+  }
+}
