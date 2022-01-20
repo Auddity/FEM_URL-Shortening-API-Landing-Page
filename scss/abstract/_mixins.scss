@@ -12,7 +12,13 @@
 
 @mixin flexSpaceBetween {
   @extend %flex;
-  justify-content: space-between
+  justify-content: space-between;
+}
+
+@mixin mq {
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
 }
 
 @function setTextColor($color) {

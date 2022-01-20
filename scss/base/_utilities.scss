@@ -1,16 +1,8 @@
 .container {
-  width: 90%;
+  width: min(90%, 110rem);
   margin-inline: auto;
 }
 
 .capitialize {
   text-transform: capitalize;
 }
-
-// .hidden {
-//   display: none;
-// }
-
-// .show {
-//   display: block;
-// }

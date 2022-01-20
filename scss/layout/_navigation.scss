@@ -16,6 +16,10 @@
     padding-inline: v.$lgPad;
     background: v.$darkViolet;
     border-radius: v.$smallRadius;
+
+    &.show {
+      display: block;
+    }
     
     .nav-items, .login-items {
       @include mx.flexCenter;
@@ -30,13 +34,9 @@
     .nav-items {
       border-bottom: 1px v.$borderGray solid;
     }
-
-    &.show {
-      display: block;
-    }
   }
 
-  i {
+  .nav-btn-ctnr {
     font-size: 3rem;
   }
 }

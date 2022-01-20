@@ -1,0 +1,45 @@
+@use '../abstract/mixins' as mx;
+
+// Navigation iPad Pro
+@include mx.mq {
+  // NavBar
+  .nav-bar {
+    &-menu {
+      display: block;
+      position: initial;
+      display: flex;
+      justify-content: space-between;
+      height: auto;
+      background: transparent;
+      padding: 0;
+      // padding-inline-start: 4rem;
+      border-radius: 0;
+      margin-block-start: -1rem;
+
+      .nav-items, .login-items {
+        flex-direction: row;
+
+        a:not(.btn-pill) {
+          padding-inline-start: 4rem;
+        }
+
+        .btn-pill {
+          padding-inline: 2rem;
+          margin-inline-start: 4rem;
+        }
+      }
+
+      .nav-items {
+        border-bottom: none;
+      }
+    
+      a:not(.btn-pill) {
+        color: mx.setTextColor(#fff);
+      }
+    }
+
+    .nav-btn-ctnr {
+      display: none;
+    }
+  }
+}
