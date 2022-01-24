@@ -4,6 +4,8 @@
 .btn {
   display: inline-block;
   text-align: center;
+  font-size: inherit;
+  font-weight: 700;
   background: v.$cyan;
   color: mx.setTextColor(v.$cyan);
   width: 100%;
@@ -19,7 +21,10 @@
   }
 
   &-square {
-    border-radius: v.$smallRadius
+    border-radius: v.$verySmallRadius;
+    padding-block: v.$smPad;
+    margin-block-start: 2rem;
+    border: none;
   }
 
   &:active {

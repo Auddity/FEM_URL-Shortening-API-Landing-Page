@@ -1,0 +1,13 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.main {
+  position: relative;
+  background: red;
+  background: v.$lightGray;
+  margin-block-start: 20rem;
+
+  .temp-div {
+    height: 400px;
+  }
+}

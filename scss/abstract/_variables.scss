@@ -2,6 +2,7 @@
 $cyan: hsl(180, 66%, 49%);
 $darkViolet: hsl(257, 27%, 26%);
 $red: hsl(0, 87%, 57%);
+$lightGray: hsl(250, 5%, 94%);
 $gray: hsl(0, 0%, 75%);
 $borderGray: hsla(0, 0%, 75%, .3);
 $grayishViolet: hsl(257, 7%, 63%);
@@ -13,10 +14,11 @@ $font-size: 18px;
 $font-family: 'Poppins', sans-serif;
 
 // Radii
-$pillRadius: 5rem;
+$verySmallRadius: .5rem;
 $smallRadius: 1.5rem;
+$pillRadius: 5rem;
 
 // Padding & Margins
-$smPad: 1rem;
-$mdPad: 2rem;
+$smPad: 1.2rem;
+$mdPad: 2.2rem;
 $lgPad: 3rem;

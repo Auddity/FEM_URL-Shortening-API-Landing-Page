@@ -1,0 +1,35 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.form {
+  position: absolute;
+  top: -7.5rem;
+  left: 50%;
+  width: 90%;
+  transform: translateX(-50%);
+  background: v.$darkViolet 
+    url('../images/bg-shorten-mobile.svg')
+    no-repeat
+    top right;
+  padding: v.$mdPad;
+  border-radius: v.$smallRadius;
+
+  &-control {
+    position: relative;
+
+    .input-text {
+      position: absolute;
+      left: 1.5rem;
+      top: .1rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  &-input {
+    width: 100%;
+    height: 4.2rem;
+    padding: v.$smPad;
+    border-radius: v.$verySmallRadius;
+    border: none;
+  }
+}
