@@ -3,11 +3,73 @@
 
 .main {
   position: relative;
+  @include mx.flexCenter;
+  flex-direction: column;
   background: red;
   background: v.$lightGray;
+  text-align: center;
   margin-block-start: 20rem;
 
-  .temp-div {
-    height: 400px;
+  .info {
+    padding-block-start: 15rem;
+
+    
+    .header {
+      padding-block-end: 12rem;
+
+      .title {
+        padding-block-end: v.$mdPad;
+      }
+    }
+
+    &-card {
+      position: relative;
+      background: #fff;
+      border-radius: v.$smallRadius;
+      padding-block: 7.5rem v.$lgPad;
+      padding-inline: v.$mdPad;
+      z-index: 1;
+
+      &:nth-child(even) {
+        margin-block: 10rem;
+      }
+
+      .circle {
+        position: absolute;
+        top: -4.5rem;
+        left: 50%;
+        width: 9rem;
+        height: 9rem;
+        transform: translateX(-50%);
+        background: v.$darkViolet;
+        border-radius: 50%;
+
+        img {
+          position: absolute;
+          inset: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &-content {
+        font-size: 1.6rem;
+
+        h3 {
+          padding-block-end: v.$mdPad;
+        }
+      }
+    }
+
+    .bg-line {
+      position: absolute;
+      top: 47%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 45rem;
+      width: 1rem;
+      background: v.$cyan;
+    }
+    
   }
+
 }
