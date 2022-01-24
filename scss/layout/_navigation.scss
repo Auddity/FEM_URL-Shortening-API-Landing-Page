@@ -3,16 +3,20 @@
 
 .nav-bar {
   @include mx.flexSpaceBetween;
-  padding-block: v.$lgPad;
+  padding-block: v.$mdPad v.$smPad;
   position: relative;
+
+  // .logo-container {
+  //   height: auto;
+  //   width: auto;
+  // }
 
   &-menu {
     display: none;
     position: absolute;
     inset: 8rem auto 0;
     width: 100%;
-    // TODO: Adjust height to cover header illustration
-    height: 42rem;
+    height: 34rem;
     padding-inline: v.$lgPad;
     background: v.$darkViolet;
     border-radius: v.$smallRadius;
@@ -24,10 +28,10 @@
     .nav-items, .login-items {
       @include mx.flexCenter;
       flex-direction: column;
-      padding-block: v.$mdPad;
+      padding-block: v.$smPad;
 
       a:not(.btn-pill) {
-        padding-block: v.$mdPad;
+        padding-block: 1.5rem;
       }
     }
 

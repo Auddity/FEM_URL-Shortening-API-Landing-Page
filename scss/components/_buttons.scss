@@ -26,4 +26,8 @@
     background: v.$darkViolet;
     color: mx.setTextColor(v.$darkViolet);
   }
+
+  &-header {
+    width: 60%;
+  }
 }

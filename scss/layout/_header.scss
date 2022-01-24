@@ -1,4 +1,27 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as mx;
 
-// TODO: anchor tag size to fit logo img, curosor pointer
+.header {
+  text-align: center;
+  overflow: hidden;
+
+  &-img-ctnr {
+    height: 340px;
+    padding-block-end: v.$lgPad;
+    
+    img {
+      height: 100%;
+    }
+  }
+
+  &-content {
+    .title {
+      line-height: 1.2;
+    }
+
+    p {
+      padding-block: v.$mdPad;
+      line-height: 1.8;
+    }
+  }
+}
