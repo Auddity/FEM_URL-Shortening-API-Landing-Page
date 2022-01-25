@@ -1,3 +1,5 @@
+@use '../abstract/variables' as v;
+
 .container {
   width: min(90%, 110rem);
   margin-inline: auto;
@@ -5,4 +7,8 @@
 
 .capitialize {
   text-transform: capitalize;
+}
+
+.title {
+  padding-block-end: v.$mdPad;
 }

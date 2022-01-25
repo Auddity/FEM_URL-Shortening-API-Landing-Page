@@ -8,18 +8,13 @@
   background: red;
   background: v.$lightGray;
   text-align: center;
-  margin-block-start: 20rem;
+  margin-block-start: 15rem;
 
   .info {
     padding-block-start: 15rem;
 
-    
-    .header {
-      padding-block-end: 12rem;
-
-      .title {
-        padding-block-end: v.$mdPad;
-      }
+    &-header {
+      font-size: 1.6rem;
     }
 
     &-card {
@@ -62,14 +57,25 @@
 
     .bg-line {
       position: absolute;
-      top: 47%;
+      top: 35%;
       left: 50%;
       transform: translateX(-50%);
       height: 45rem;
       width: 1rem;
       background: v.$cyan;
     }
-    
   }
 
+  .cta {
+    background: v.$darkViolet 
+    url('../images/bg-boost-mobile.svg') 
+    no-repeat 
+    top;
+    width: 100%;
+    padding-block: 9.4rem;
+
+    .title {
+      color: mx.setTextColor(v.$darkViolet);
+    }
+  }
 }

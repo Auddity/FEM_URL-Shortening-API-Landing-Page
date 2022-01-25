@@ -1,0 +1,37 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.footer {
+  @include mx.flexColumn;
+  background: v.$veryDarkViolet;
+  text-align: center;
+  padding-block: 4rem;
+
+  .footer-title {
+    color: mx.setTextColor(v.$veryDarkViolet);
+    padding-block-end: 4rem;
+  }
+
+  &-links-ctnr {
+    .link-group {
+      @include mx.flexColumn;
+      padding-block-end: 4rem;
+
+      .footer-title {
+        padding-block-end: v.$mdPad;
+      }
+
+      a {
+        font-weight: 500;
+        color: mx.setTextColor(#fff);
+        padding-block: 1rem;
+      }
+    }
+  }
+
+  &-social-ctnr {
+    a {
+      padding-inline: v.$smPad;
+    }
+  }
+}

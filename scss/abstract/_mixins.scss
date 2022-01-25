@@ -15,6 +15,12 @@
   justify-content: space-between;
 }
 
+@mixin flexColumn {
+  @extend %flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 @mixin mq {
   @media only screen and (min-width: 900px) {
     @content;
