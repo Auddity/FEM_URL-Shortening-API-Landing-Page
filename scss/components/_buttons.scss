@@ -8,6 +8,7 @@
   font-weight: 700;
   background: v.$cyan;
   color: mx.setTextColor(v.$cyan);
+  border: none;
   width: 100%;
 
   &-menu {
@@ -24,7 +25,6 @@
     border-radius: v.$verySmallRadius;
     padding-block: v.$smPad;
     margin-block-start: 2rem;
-    border: none;
   }
 
   &:active {
@@ -32,7 +32,7 @@
     color: mx.setTextColor(v.$darkViolet);
   }
 
-  &-header, &-cta {
+  &-cta {
     width: 60%;
   }
 }

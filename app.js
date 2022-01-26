@@ -6,9 +6,22 @@ const getElement = selector => {
 
 const menuBtn = getElement('menu-btn');
 const menuModal = getElement('nav-bar-menu');
+const startBtns = document.querySelectorAll('.btn-cta');
+const form = getElement('form');
 
-// Open menu modal
+// Open Menu Modal
 menuBtn.addEventListener('click', () => {
   menuModal.classList.toggle('show');
   console.log('click');
+});
+
+// Scroll to Form
+startBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    let formTop = form.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: formTop,
+      left: 0
+    });
+  });
 });
