@@ -8,10 +8,44 @@
   background: red;
   background: v.$lightGray;
   text-align: center;
-  margin-block-start: 15rem;
+  margin-block-start: 16rem;
 
+  .return {
+    background: #fff;
+    text-align: left;
+    padding-block: v.$smPad;
+    border-radius: v.$smallRadius;
+    margin-block-end: v.$mdPad;
+
+    &:first-of-type {
+      margin-block-start: 10rem;
+    }
+
+    &-url {
+      width: 90%;
+      margin-inline: auto;
+      color: v.$veryDarkBlue;
+      padding-block: v.$smPad;
+      border-bottom: 1px solid v.$borderGray;
+      overflow: hidden;
+    }
+    
+    &-shorten {
+      width: 90%;
+      margin-inline: auto;
+      color: v.$cyan;
+      padding-block-start: v.$smPad;
+    }
+
+    &-btn-ctnr {
+      width: 90%;
+      margin-inline: auto;
+    }
+  }
+  
   .info {
-    padding-block-start: 15rem;
+    margin-block-start: 9rem;
+    position: inherit;
 
     &-header {
       font-size: 1.6rem;
@@ -57,7 +91,7 @@
 
     .bg-line {
       position: absolute;
-      top: 35%;
+      top: 43%;
       left: 50%;
       transform: translateX(-50%);
       height: 45rem;
