@@ -9,21 +9,24 @@ const menuModal = getElement('nav-bar-menu');
 const startBtns = document.querySelectorAll('.btn-cta');
 const form = getElement('form');
 const input = getElement('form-input').value;
-
+const URL = `https://api.shrtco.de/v2/shorten?url=${input}`;
 
 form.addEventListener('submit', e => {
   e.preventDefault();
   
-  getData();
+  console.log(input);
+  console.log(URL);
+  getData(URL);
 });
 
-const getData = () => {
+const getData = url => {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', `https://api.shrtco.de/v2/shorten?url=${input}`);
-  console.log(xhr.response); // empty
+  xhr.open('GET', url);
   xhr.onreadystatechange = () => {
-    if(xhr.readyState === 4 && xhr.status === 200) {
-      console.log('success');
+    if(xhr.readyState !== 4) return;
+    if(xhr.status === 201) {
+      const data = JSON.parse(xhr.responseText);
+      console.log(data);
     }
     console.log({
       status: xhr.status,
