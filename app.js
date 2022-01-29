@@ -8,13 +8,15 @@ const menuBtn = getElement('menu-btn');
 const menuModal = getElement('nav-bar-menu');
 const startBtns = document.querySelectorAll('.btn-cta');
 const form = getElement('form');
-const input = getElement('form-input').value;
-const URL = `https://api.shrtco.de/v2/shorten?url=${input}`;
+const inputValue = getElement('form-input').value;
+const urlDisplay = getElement('url-display');
+const urlShort = getElement('url-short');
+
+const URL = `https://api.shrtco.de/v2/shorten?url=${inputValue}`;
 
 form.addEventListener('submit', e => {
   e.preventDefault();
   
-  console.log(input);
   console.log(URL);
   getData(URL);
 });
@@ -26,19 +28,22 @@ const getData = url => {
     if(xhr.readyState !== 4) return;
     if(xhr.status === 201) {
       const data = JSON.parse(xhr.responseText);
-      console.log(data);
+      const shortRes = data.result.full_short_link2;
+      const origRes = data.result.original_link;
+      displayData(origRes, shortRes)
     }
     console.log({
       status: xhr.status,
       text: xhr.statusText,
       state: xhr.readyState
     });
-  }
+  };
   xhr.send();
-}
+};
 
-const displayData = () => {
-
+const displayData = (orig, short) => {
+  urlDisplay.textContent = orig;
+  urlShort.textContent = short;
 };
 
 // Open Menu Modal
