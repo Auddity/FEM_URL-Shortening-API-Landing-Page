@@ -8,22 +8,24 @@ const menuBtn = getElement('menu-btn');
 const menuModal = getElement('nav-bar-menu');
 const startBtns = document.querySelectorAll('.btn-cta');
 const form = getElement('form');
-const inputValue = getElement('form-input').value;
+const inputEl = getElement('form-input');
 const urlDisplay = getElement('url-display');
 const urlShort = getElement('url-short');
 
-const URL = `https://api.shrtco.de/v2/shorten?url=${inputValue}`;
+const URL = `https://api.shrtco.de/v2/shorten?url=`;
 
+// URL Submit
 form.addEventListener('submit', e => {
   e.preventDefault();
-  
-  console.log(URL);
+  console.log(inputEl.value);
   getData(URL);
+  // inputEl.value = '';
+  // displayData()
 });
 
 const getData = url => {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', url);
+  xhr.open('GET', `${url}${inputEl.value}`);
   xhr.onreadystatechange = () => {
     if(xhr.readyState !== 4) return;
     if(xhr.status === 201) {
@@ -31,6 +33,9 @@ const getData = url => {
       const shortRes = data.result.full_short_link2;
       const origRes = data.result.original_link;
       displayData(origRes, shortRes)
+    } else {
+      console.log(xhr.ok);
+      console.log(xhr.error_code);
     }
     console.log({
       status: xhr.status,
@@ -42,14 +47,24 @@ const getData = url => {
 };
 
 const displayData = (orig, short) => {
-  urlDisplay.textContent = orig;
+  const urlDisplayWidth = urlDisplay.getBoundingClientRect().width;
+  const inputValue = inputEl.value;
+  //TODO: Set conditional for element length, when in responsive the second parameter will change
+  console.log(urlDisplayWidth);
+
+  if(urlDisplayWidth < 340) {
+    urlDisplay.textContent = `${orig.slice(0, 30 - inputValue.length)}...`;
+    console.log(true);
+  } else {
+    urlDisplay.textContent = orig;
+    console.log(false);
+  };
+
   urlShort.textContent = short;
 };
-
 // Open Menu Modal
 menuBtn.addEventListener('click', () => {
   menuModal.classList.toggle('show');
-  console.log('click');
 });
 
 // Scroll to Form

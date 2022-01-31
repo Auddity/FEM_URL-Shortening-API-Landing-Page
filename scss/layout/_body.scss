@@ -13,28 +13,29 @@
   .return {
     background: #fff;
     text-align: left;
-    padding-block: v.$smPad;
+    padding-block: v.$smPad v.$mdPad;
     border-radius: v.$smallRadius;
-    margin-block-end: v.$mdPad;
+    overflow: hidden;
 
     &:first-of-type {
       margin-block-start: 10rem;
     }
 
     &-url {
-      width: 90%;
-      margin-inline: auto;
       color: v.$veryDarkBlue;
       padding-block: v.$smPad;
       border-bottom: 1px solid v.$borderGray;
-      overflow: hidden;
+
+      &-display {
+        width: 100%;
+        margin-inline: v.$mdPad;
+      }
     }
     
     &-shorten {
-      width: 90%;
-      margin-inline: auto;
       color: v.$cyan;
       padding-block-start: v.$smPad;
+      padding-inline-start: v.$mdPad;
     }
 
     &-btn-ctnr {
