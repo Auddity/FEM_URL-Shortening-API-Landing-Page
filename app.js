@@ -47,19 +47,7 @@ const getData = url => {
 };
 
 const displayData = (orig, short) => {
-  const urlDisplayWidth = urlDisplay.getBoundingClientRect().width;
-  const inputValue = inputEl.value;
-  //TODO: Set conditional for element length, when in responsive the second parameter will change
-  console.log(urlDisplayWidth);
-
-  if(urlDisplayWidth < 340) {
-    urlDisplay.textContent = `${orig.slice(0, 30 - inputValue.length)}...`;
-    console.log(true);
-  } else {
-    urlDisplay.textContent = orig;
-    console.log(false);
-  };
-
+  urlDisplay.textContent = orig;
   urlShort.textContent = short;
 };
 // Open Menu Modal

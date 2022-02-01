@@ -28,7 +28,10 @@
 
       &-display {
         width: 100%;
-        margin-inline: v.$mdPad;
+        text-overflow: ellipsis;
+        padding-inline: v.$mdPad;
+        white-space: nowrap;
+        overflow: hidden;
       }
     }
     
