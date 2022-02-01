@@ -9,6 +9,8 @@ const menuModal = getElement('nav-bar-menu');
 const startBtns = document.querySelectorAll('.btn-cta');
 const form = getElement('form');
 const inputEl = getElement('form-input');
+const returnEl = getElement('return');
+const infoEl = getElement('info');
 const urlDisplay = getElement('url-display');
 const urlShort = getElement('url-short');
 
@@ -17,10 +19,8 @@ const URL = `https://api.shrtco.de/v2/shorten?url=`;
 // URL Submit
 form.addEventListener('submit', e => {
   e.preventDefault();
-  console.log(inputEl.value);
   getData(URL);
-  // inputEl.value = '';
-  // displayData()
+  // TODO: When done add putting input value back to an empty string
 });
 
 const getData = url => {
@@ -36,20 +36,18 @@ const getData = url => {
     } else {
       console.log(xhr.ok);
       console.log(xhr.error_code);
-    }
-    console.log({
-      status: xhr.status,
-      text: xhr.statusText,
-      state: xhr.readyState
-    });
+    };
   };
   xhr.send();
 };
 
 const displayData = (orig, short) => {
+  returnEl.classList.add('show');
+  infoEl.classList.add('show');
   urlDisplay.textContent = orig;
   urlShort.textContent = short;
 };
+
 // Open Menu Modal
 menuBtn.addEventListener('click', () => {
   menuModal.classList.toggle('show');

@@ -11,11 +11,15 @@
   margin-block-start: 17rem;
 
   .return {
+    display: none;
     background: #fff;
     text-align: left;
     padding-block: v.$smPad v.$mdPad;
     border-radius: v.$smallRadius;
-    overflow: hidden;
+    
+    &.show {
+      display: block;
+    }
 
     &:first-of-type {
       margin-block-start: 10rem;
@@ -48,8 +52,12 @@
   }
   
   .info {
-    margin-block-start: 9rem;
+    margin-block-start: 15rem;
     position: inherit;
+    
+    &.show {
+      margin-block-start: 7.5rem;
+    }
 
     &-header {
       font-size: 1.6rem;
@@ -95,10 +103,10 @@
 
     .bg-line {
       position: absolute;
-      top: 38%;
+      bottom: 25%;
       left: 50%;
       transform: translateX(-50%);
-      height: 50rem;
+      height: 70rem;
       width: 1rem;
       background: v.$cyan;
     }
