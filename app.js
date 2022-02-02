@@ -8,20 +8,11 @@ const menuBtn = getElement('menu-btn');
 const menuModal = getElement('nav-bar-menu');
 const startBtns = document.querySelectorAll('.btn-cta');
 const form = getElement('form');
-const inputEl = getElement('form-input');
-const returnEl = getElement('return');
+const inputEl = getElement('form-input');;
+const displayCtnr = getElement('display-ctnr');
 const infoEl = getElement('info');
-const urlDisplay = getElement('url-display');
-const urlShort = getElement('url-short');
 
 const URL = `https://api.shrtco.de/v2/shorten?url=`;
-
-// URL Submit
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  getData(URL);
-  // TODO: When done add putting input value back to an empty string
-});
 
 const getData = url => {
   const xhr = new XMLHttpRequest();
@@ -32,7 +23,7 @@ const getData = url => {
       const data = JSON.parse(xhr.responseText);
       const shortRes = data.result.full_short_link2;
       const origRes = data.result.original_link;
-      displayData(origRes, shortRes)
+      displayData(origRes, shortRes);
     } else {
       console.log(xhr.ok);
       console.log(xhr.error_code);
@@ -42,11 +33,37 @@ const getData = url => {
 };
 
 const displayData = (orig, short) => {
-  returnEl.classList.add('show');
-  infoEl.classList.add('show');
-  urlDisplay.textContent = orig;
-  urlShort.textContent = short;
-};
+  const returnEl = document.createElement('div');
+  const returnOrig = document.createElement('div');
+  const returnShort = document.createElement('div');
+  const origP = document.createElement('p');
+  const shortenP = document.createElement('p');
+  returnEl.classList.add('return');
+  returnOrig.classList.add('return-url');
+  returnShort.classList.add('return-shorten');
+  origP.classList.add('return-url-display');
+  shortenP.classList.add('return-shorten-display');
+  displayCtnr.appendChild(returnEl);
+  returnEl.appendChild(returnOrig);
+  returnEl.appendChild(returnShort);
+  returnOrig.appendChild(origP);
+  returnShort.appendChild(shortenP);
+
+  origP.textContent = orig;
+  shortenP.textContent = short;
+
+  const btnCtnr = document.createElement('div');
+  const btn = document.createElement('button');
+  btnCtnr.classList.add('return-btn-ctnr');
+  btn.className = 'btn btn-square btn-copy';
+  btn.setAttribute('type', 'button');
+  btn.textContent = 'Copy';
+  returnEl.appendChild(btnCtnr);
+  btnCtnr.appendChild(btn);
+
+  // TODO: event listener for copy btn.
+
+}
 
 // Open Menu Modal
 menuBtn.addEventListener('click', () => {
@@ -62,4 +79,11 @@ startBtns.forEach(btn => {
       left: 0
     });
   });
+});
+
+// URL Submit
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  getData(URL);
+  inputEl.value = '';
 });

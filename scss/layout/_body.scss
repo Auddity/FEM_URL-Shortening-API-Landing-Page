@@ -11,15 +11,11 @@
   margin-block-start: 17rem;
 
   .return {
-    display: none;
     background: #fff;
     text-align: left;
     padding-block: v.$smPad v.$mdPad;
     border-radius: v.$smallRadius;
-    
-    &.show {
-      display: block;
-    }
+    margin-block-end: v.$mdPad;
 
     &:first-of-type {
       margin-block-start: 10rem;
@@ -52,12 +48,8 @@
   }
   
   .info {
-    margin-block-start: 15rem;
+    margin-block-start: 14rem;
     position: inherit;
-    
-    &.show {
-      margin-block-start: 7.5rem;
-    }
 
     &-header {
       font-size: 1.6rem;
