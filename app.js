@@ -8,7 +8,8 @@ const menuBtn = getElement('menu-btn');
 const menuModal = getElement('nav-bar-menu');
 const startBtns = document.querySelectorAll('.btn-cta');
 const form = getElement('form');
-const inputEl = getElement('form-input');;
+const inputEl = getElement('form-input');
+const errP = getElement('err');
 const displayCtnr = getElement('display-ctnr');
 const infoEl = getElement('info');
 
@@ -76,8 +77,11 @@ const copyShortUrl = (text, copyBtn) => {
     });
 };
 
-const inputError = () => {
-
+const inputError = (message) => {
+  errP.textContent = message;
+  inputEl.style.outlineColor = 'hsl(0, 87%, 57%)';
+  inputEl.style.outlineStyle = 'solid';
+  inputEl.style.outlineWidth = '1px';
 };
 
 // Open Menu Modal

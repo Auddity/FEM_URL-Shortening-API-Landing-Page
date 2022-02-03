@@ -34,4 +34,13 @@
     border-radius: v.$verySmallRadius;
     border: none;
   }
+
+  .err {
+    font-size: 1.4rem;
+    font-style: italic;
+    text-align: left;
+    font-weight: 500;
+    color: v.$red;
+    padding-top: .5rem;
+  }
 }
