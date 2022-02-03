@@ -61,9 +61,24 @@ const displayData = (orig, short) => {
   returnEl.appendChild(btnCtnr);
   btnCtnr.appendChild(btn);
 
-  // TODO: event listener for copy btn.
-
+  const copyBtn = btnCtnr.querySelector('.btn-copy');
+  copyBtn.onclick = () => copyShortUrl(shortenP.textContent, copyBtn);
 }
+
+const copyShortUrl = (text, copyBtn) => {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      copyBtn.textContent = 'Copied!';
+      copyBtn.style.background = 'hsl(257, 27%, 26%)';
+    })
+    .catch(err => {
+      alert('Error in copying url: ', err);
+    });
+};
+
+const inputError = () => {
+
+};
 
 // Open Menu Modal
 menuBtn.addEventListener('click', () => {
@@ -84,6 +99,6 @@ startBtns.forEach(btn => {
 // URL Submit
 form.addEventListener('submit', e => {
   e.preventDefault();
-  getData(URL);
+  inputEl.value === '' ? inputError('Please add a link') : getData(URL);
   inputEl.value = '';
 });
