@@ -8,6 +8,7 @@ const menuBtn = getElement('menu-btn');
 const menuModal = getElement('nav-bar-menu');
 const startBtns = document.querySelectorAll('.btn-cta');
 const form = getElement('form');
+const inputText = getElement('input-text');
 const inputEl = getElement('form-input');
 const errP = getElement('err');
 const displayCtnr = getElement('display-ctnr');
@@ -105,4 +106,12 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   inputEl.value === '' ? inputError('Please add a link') : getData(URL);
   inputEl.value = '';
+});
+
+// Input Focus/Blur
+inputEl.addEventListener('focus', () => {
+  inputText.style.zIndex = '-1';
+});
+inputEl.addEventListener('blur', () => {
+  inputText.style.zIndex = '0';
 });
