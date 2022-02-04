@@ -19,8 +19,8 @@
 </head>
 <body>
   <header class="header" id="header">
-    <div class="container">
-      <div class="nav-bar">
+    <!-- <div class="container"> -->
+      <div class="nav-bar container">
         <div class="logo-container">
           <a href="#header">
             <img src="./images/logo.svg" alt="logo">
@@ -46,26 +46,27 @@
         </div>
       </div>
 
-      <div class="header-img-ctnr">
-        <img src="./images/illustration-working.svg" alt="illustration-working">
-      </div>
-
       <div class="header-content">
-        <h1 class="title">
-          More than just shorter links
-        </h1>
-        <p>Build your brand's recognition and get detailed insights on how your links are performing.</p>
+        <div class="header-content-img-ctnr">
+          <img src="./images/illustration-working.svg" alt="illustration-working">
+        </div>
+  
+        <div class="header-content-info container">
+          <h1 class="title">
+            More than just shorter links
+          </h1>
+          <p>Build your brand's recognition and get detailed insights on how your links are performing.</p>
+          <button type="button" class="btn btn-pill btn-cta">
+            Get Started
+          </button>
+        </div>
       </div>
-
-      <button type="button" class="btn btn-pill btn-cta">
-        Get Started
-      </button>
-    </div>
+    <!-- </div> -->
   </header>
 
   <main class="main" id="main">
     <div class="container">
-      <form class="form" id="form">
+      <form class="form container" id="form">
         <label for="link-input" class="form-control">
           <span class="input-text" id="input-text">
             Shorten a link here...

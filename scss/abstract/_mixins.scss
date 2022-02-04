@@ -21,8 +21,8 @@
   flex-direction: column;
 }
 
-@mixin mq {
-  @media only screen and (min-width: 900px) {
+@mixin mq($size) {
+  @media only screen and (min-width: $size) {
     @content;
   }
 }
