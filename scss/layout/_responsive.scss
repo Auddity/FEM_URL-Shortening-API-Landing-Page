@@ -95,13 +95,17 @@
     padding-block: 3.7rem;
     padding-inline: 5rem;
 
-
     &-control {
       flex-grow: 3;
 
       .input-text {
         top: .8rem;
       }
+    }
+
+    .err {
+      position: absolute;
+      bottom: 1rem;
     }
 
     .btn-square {
