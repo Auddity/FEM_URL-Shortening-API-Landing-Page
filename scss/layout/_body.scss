@@ -55,6 +55,20 @@
       font-size: 1.6rem;
     }
 
+    .info-card-ctnr {
+      margin-block: 10rem;
+
+      .bg-line {
+        position: absolute;
+        bottom: 28%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 70rem;
+        width: 1rem;
+        background: v.$cyan;
+      }
+    }
+
     &-card {
       position: relative;
       background: #fff;
@@ -91,16 +105,6 @@
           padding-block-end: v.$mdPad;
         }
       }
-    }
-
-    .bg-line {
-      position: absolute;
-      bottom: 28%;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 70rem;
-      width: 1rem;
-      background: v.$cyan;
     }
   }
 

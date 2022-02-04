@@ -1,15 +1,19 @@
 @use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
 
 // iPad
 @include mx.mq(810px) {
   .container {
     width: 80%;
   }
+
   .form {
     background-image: url('../images/bg-shorten-desktop.svg');
+    background-size: cover;
   }
   .main .cta {
     background-image: url('../images/bg-boost-desktop.svg');
+    background-size: cover;
     padding-block: 6.9rem;
   }
 }
@@ -25,6 +29,7 @@
       justify-content: space-between;
       height: auto;
       background: transparent;
+      font-size: 1.6rem;
       padding: 0;
       border-radius: 0;
       margin-block-start: -1rem;
@@ -37,7 +42,7 @@
         }
 
         .btn-pill {
-          padding-inline: 2rem;
+          padding-inline: v.$lgPad;
           margin-inline-start: 4rem;
         }
       }
@@ -56,29 +61,166 @@
     }
   }
 
-  // Container 
- 
-
   // Header
   .header-content {
     display: flex;
     flex-direction: row-reverse;
     text-align: left;
     margin-block-start: 5rem;
+    margin-inline-start: 10rem;
 
     &-img-ctnr {
       transform: translateX(8rem);
+      padding-inline-start: 0;
     }
 
     &-info {
       .title {
-        font-size: 4rem;
-        padding-block-end: 0;
+        font-size: 4.4rem;
+        padding-block: 4rem 0;
       }
 
       p {
-        padding-block-start: 0;
+        padding-block-start: .5rem;
         line-height: 1.5;
+      }
+    }
+  }
+
+  // Form
+  .form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 3.7rem;
+    padding-inline: 5rem;
+
+
+    &-control {
+      flex-grow: 3;
+
+      .input-text {
+        top: .8rem;
+      }
+    }
+
+    .btn-square {
+      width: auto;
+      padding-inline: v.$lgPad;
+      margin: 0;
+    }
+  }
+
+  // Body Info
+  .info {
+    &-header {
+      line-height: 1.9;
+      padding-inline: 18rem;
+    }
+  }
+}
+
+// iPad Pro Horiz & Wider
+@include mx.mq(1366px) {
+  .container {
+    width: 75%;
+  }
+
+  // Nav
+  .nav-bar {
+    &-menu {
+      font-size: 1.8rem;
+    }
+  }
+
+  // Header
+  .header-content {
+    margin-inline-start: 16rem;
+
+    &-info {
+      .title {
+        font-size: 6.5rem;
+      }
+
+      p {
+        padding-inline-end: 5rem;
+        font-size: 2rem;
+      }
+    }
+
+    &-img-ctnr {
+      height: 450px;
+    }
+  }
+  
+  // Body Info
+  .info {
+    &-header {
+      padding-inline: 28rem;
+
+    }
+    
+    &-card-ctnr {
+      display: flex;
+      gap: 4rem;
+      height: 35rem;
+      
+      .info-card:nth-child(1) {
+        align-self: flex-start;
+      }
+      .info-card:nth-child(2) {
+        align-self: center;
+      }
+      .info-card:nth-child(3) {
+        align-self: flex-end;
+      }
+
+      .info-card {
+        text-align: left;
+        p {
+          font-size: 1.4rem;
+          line-height: 1.8;
+        }
+        .circle {
+          left: 25%;
+        }
+      }
+      
+      .bg-line {
+        top: 17%;
+        transform: rotate(90deg) !important;
+      }
+    }
+  }
+
+  .cta {
+    .title {
+      font-size: 3.7rem;
+    }
+  }
+
+  // Footer
+  .footer {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 6rem;
+    padding-inline: 12%;
+    padding-block: 8rem 6rem;
+
+    &-logo-ctnr {
+      text-align: left;
+      flex: 1 1 0;
+    }
+    
+    &-links-ctnr {
+      display: flex;
+      gap: 8rem;
+      flex: 2 1 0;
+      
+      .link-group {
+        padding: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
       }
     }
   }
