@@ -25,6 +25,10 @@
         font-weight: 500;
         color: mx.setTextColor(#fff);
         padding-block: 1rem;
+
+        &:hover {
+          color: v.$cyan;
+        }
       }
     }
   }
@@ -32,6 +36,14 @@
   &-social-ctnr {
     a {
       padding-inline: v.$smPad;
+
+      i {
+        font-size: 3rem;
+      }
+
+      & > i:hover {
+        color: v.$cyan;
+      }
     }
   }
 }

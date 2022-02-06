@@ -31,6 +31,18 @@
     }
 
     .nav-items {
+      a:hover {
+        color: v.$veryDarkBlue;
+      }
+    }
+
+    .login-items {
+      a:not(:last-child):hover {
+        color: v.$veryDarkBlue;
+      }
+    }
+
+    .nav-items {
       border-bottom: 1px v.$borderGray solid;
     }
   }

@@ -12,6 +12,11 @@
   width: 100%;
   cursor: pointer;
 
+  &:hover {
+    background-color: v.$cyanLight;
+    color: #fefefe;
+  }
+
   &-menu {
     background: transparent;
     color: v.$grayishViolet;
