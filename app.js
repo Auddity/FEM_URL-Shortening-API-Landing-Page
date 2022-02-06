@@ -26,10 +26,7 @@ const getData = url => {
       const shortRes = data.result.full_short_link2;
       const origRes = data.result.original_link;
       displayData(origRes, shortRes);
-    } else {
-      console.log(xhr.ok);
-      console.log(xhr.error_code);
-    };
+    }
   };
   xhr.send();
 };
