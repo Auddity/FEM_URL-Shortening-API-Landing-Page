@@ -16,6 +16,10 @@
     background-size: cover;
     padding-block: 6.9rem;
   }
+
+  .main .info .bg-line {
+    bottom: 30% !important;
+  }
 }
 
 // Navigation iPad Pro
@@ -236,7 +240,8 @@
       }
       
       .bg-line {
-        top: -20%;
+        top: -40%;
+        height: 60rem !important;
         transform: rotate(90deg) !important;
       }
     }
