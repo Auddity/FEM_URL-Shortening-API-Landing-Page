@@ -25,11 +25,11 @@
       color: v.$veryDarkBlue;
       padding-block: v.$smPad;
       border-bottom: 1px solid v.$borderGray;
-
+      
       &-display {
         width: 100%;
-        text-overflow: ellipsis;
         padding-inline: v.$mdPad;
+        text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
       }
@@ -63,7 +63,7 @@
         bottom: 28%;
         left: 50%;
         transform: translateX(-50%);
-        height: 70rem;
+        height: 50rem;
         width: 1rem;
         background: v.$cyan;
       }

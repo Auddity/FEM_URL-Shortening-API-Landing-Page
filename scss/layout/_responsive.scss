@@ -77,7 +77,6 @@
     &-info {
       .title {
         font-size: 4.4rem;
-        padding-block: 4rem 0;
       }
 
       p {
@@ -115,11 +114,49 @@
     }
   }
 
-  // Body Info
-  .info {
-    &-header {
-      line-height: 1.9;
-      padding-inline: 18rem;
+  // Return Display
+  .main {
+    .return {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding-block: v.$smPad;
+      padding-inline: v.$mdPad;
+  
+      &-url {
+        width: 50%;
+        flex: 2 0 auto; 
+        border-bottom: 0;
+
+        p {
+          padding-inline-end: 0;
+        }
+      }
+
+      &-shorten {
+        text-align: right;
+        flex-basis: 225px;
+        padding: 0;
+      }
+
+      &-btn-ctnr {
+        flex: 1 1 80px;
+        .btn-copy {
+          margin-block-start: 0;
+        }
+      }
+    }
+  
+    // Body Info
+    .info {
+      &-header {
+        line-height: 1.9;
+        padding-inline: 20rem;
+
+        .title {
+          font-size: 3rem;
+        }
+      }
     }
   }
 }
@@ -139,7 +176,7 @@
 
   // Header
   .header-content {
-    margin-inline-start: 16rem;
+    margin-inline-start: 12%;
 
     &-info {
       .title {
@@ -162,9 +199,17 @@
     &-header {
       padding-inline: 28rem;
 
+      .title {
+        font-size: 2.5rem;
+      }
+
+      p {
+        padding-inline: 10rem;
+      }
     }
     
     &-card-ctnr {
+      position: relative;
       display: flex;
       gap: 4rem;
       height: 35rem;
@@ -191,7 +236,7 @@
       }
       
       .bg-line {
-        top: 17%;
+        top: -20%;
         transform: rotate(90deg) !important;
       }
     }
