@@ -16,22 +16,39 @@ const infoEl = getElement('info');
 
 const URL = `https://api.shrtco.de/v2/shorten?url=`;
 
+// URL Submit
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if(inputEl.value === '') {
+    inputError('Please add a link');
+  } else {
+    getData(URL)
+      .then(response => displayData(response))
+      .catch(err => console.log(err));
+  }
+  inputEl.value = '';
+});
+
 const getData = url => {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', `${url}${inputEl.value}`);
-  xhr.onreadystatechange = () => {
-    if(xhr.readyState !== 4) return;
-    if(xhr.status === 201) {
-      const data = JSON.parse(xhr.responseText);
-      const shortRes = data.result.full_short_link2;
-      const origRes = data.result.original_link;
-      displayData(origRes, shortRes);
-    }
-  };
-  xhr.send();
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${url}${inputEl.value}`);
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState !== 4) return;
+      if(xhr.status === 201) {
+        resolve(xhr.responseText);
+      } else {
+        reject({
+          status: xhr.status,
+          text: xhr.statusText
+        });
+      }
+    };
+    xhr.send();
+  });
 };
 
-const displayData = (orig, short) => {
+const displayData = data => {
   const returnEl = document.createElement('div');
   const returnOrig = document.createElement('div');
   const returnShort = document.createElement('div');
@@ -47,9 +64,11 @@ const displayData = (orig, short) => {
   returnEl.appendChild(returnShort);
   returnOrig.appendChild(origP);
   returnShort.appendChild(shortenP);
+  
+  const { result } = JSON.parse(data);
 
-  origP.textContent = orig;
-  shortenP.textContent = short;
+  origP.textContent = result.original_link;
+  shortenP.textContent = result.full_short_link2;
 
   const btnCtnr = document.createElement('div');
   const btn = document.createElement('button');
@@ -96,13 +115,6 @@ startBtns.forEach(btn => {
       left: 0
     });
   });
-});
-
-// URL Submit
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  inputEl.value === '' ? inputError('Please add a link') : getData(URL);
-  inputEl.value = '';
 });
 
 // Input Focus/Blur
